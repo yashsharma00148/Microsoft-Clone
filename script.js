@@ -20,7 +20,7 @@ menu.addEventListener("click",()=>{
        }, 400);
         menu.classList.remove("fa-bars")
         menu.classList.add("fa-x")
-        list.style.left="0px"
+        list.style.top="50px"
         
     }
     else{
@@ -33,7 +33,7 @@ menu.addEventListener("click",()=>{
         
         menu.classList.add("fa-bars")
         menu.classList.remove("fa-x")
-        list.style.left="-200vw"
+        list.style.top="-200vw"
 
     }
 })

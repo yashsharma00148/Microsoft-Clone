@@ -95,8 +95,13 @@ header{
 }
 
 .hero{
-    /* height: 60vh; */
-    width: 100vw;
+    background-image: url(hero.avif);
+    height: 500px;
+    /* width: 80vw; */
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
    
 }
 .slide{
@@ -112,8 +117,9 @@ header{
     position: absolute;
     top: 100px;
     left: 5vw;
-    width: 35%;
-    height: 300px;
+    width: 400px;
+    /* min-width: 350px; */
+    /* height: 300px; */
     /* max-width: 400px; */
     /* height: 80%; */
     /* border: 1px solid red; */
@@ -123,7 +129,14 @@ header{
     cursor: pointer;
     
 }
+@media(max-width:500px){
+    .content{
+        width: 80%;
+        height: 300px;
+        min-width: none;
 
+    }
+}
 
 /* .slide{
 
