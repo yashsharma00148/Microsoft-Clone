@@ -1,5 +1,5 @@
 let slides=document.querySelectorAll(".slide")
-let left=document.querySelector(".left")
+let prev=document.querySelector(".prev")
 let next=document.querySelector(".next")
 let counter=0
 console.log(slides)
@@ -48,53 +48,49 @@ menu.addEventListener("click",()=>{
 
 
 
-const updateimage=()=>{
-    
-    slides.forEach((slide,index)=>{
-        
-            slide.style.transform=`translateX(-${(index-counter)*100}%)`
 
-        
-            console.log("index:",index)
-        
+
+const updateslide=()=>{
+
+
+    slides.forEach((slide,index)=>{
+        slide.style.transform=`translateX(${(index-counter)*100}%)`
     })
+
 }
+
+const autoslider=()=>{
+    setInterval(() => {
+        counter++
+        if(counter>=slides.length){
+            counter=0
+        }
+        updateslide()
+    }, 4000);
+
+}
+
 next.addEventListener("click",()=>{
     counter++
-    console.log(counter)
     if(counter>=slides.length){
         counter=0
     }
-    updateimage()
-})
+    updateslide()
 
-left.addEventListener("click",()=>{
+
+})
+prev.addEventListener("click",()=>{
     counter--
-    console.log(counter)
     if(counter<0){
         counter=slides.length-1
     }
-    updateimage()
+    updateslide()
+
+
 })
 
 
-// const autoslider=()=>{
-//     setInterval(() => {
-//         counter++
-//         if(counter>=slides.length){
-//             counter=0;
-//             updateimage()
-        
-//         }
-        
-//     }, 2000);
-//     }
-
-
-
-
-// autoslider()
-
+autoslider()
 
 
 
